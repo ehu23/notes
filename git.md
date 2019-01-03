@@ -3,6 +3,13 @@
 
 ---
 
+## Removing file from git cache
+
+`git rm --cached file1.txt`
+
+- This removes the file from the git repo without removing it from the filesystem.
+- Without the --cached flag, will remove from both the filesystem and the git repo.
+
 ## Change a remote's URL
 
 ---
