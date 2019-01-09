@@ -1,0 +1,3 @@
+# Notes
+
+Notes are formatted as markdown files in the repo. This also serves as a cloud of sorts for my laptop since my current battery voltage fluctuations are not promising...
