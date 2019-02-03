@@ -25,9 +25,10 @@
 - Extract variable by name: `a$VARIABLENAME`
 - Access 1st row of data: `a[1,]`
 - Mean: `mean(a)`. Mean of 1 variable: `mean(a$y)`. Mean of variable 2 and 3: `mean(a[,c(2,3)])`.
-- Variance (var), variance-covariance matrix (cov), correlation matrix (cor) is similar to mean, but different keyword... `var()`, `cov()`, `cor()`.
+- Sample SD (sd), sample variance (var), variance-covariance matrix (cov), correlation matrix (cor) is similar to mean, but different keyword... `sd()`, `var()`, `cov()`, `cor()`.
 - Summary of each variable in data frame: `summary(a)`
 - Rename variables in a data frame: `names(a) <- c("a", "b")` #renames variable in first column to a, 2nd column var to b. 
+- Get Number Rows/Cols in an Array/Vector/DataFrame: `nrow(obj) ncol(obj)` # returns an integer or NULL
 
 #### Plots
 
@@ -38,6 +39,7 @@
     plot(a$x, a$y) #plots variable x against variable y from data frame a
 
 - these commands will bring up the plot in another window if run on R from CLI, which you can then save as a pdf
+- return outliers of a plot with `boxplot(a)$out`
 
 ##### Plot Function Arguments
     col="blue" #color of data points
@@ -71,4 +73,5 @@
     numbers[1] #gets first element of numbers, vectors are NOT indexed by 0, but 1.
     numbers <- numbers*2 #multiply all elements in numbers vector by 2
 
+## Comparators: >, >=, <=, ==, !=, &, |
 ## Probability and Percentiles...to be continued
