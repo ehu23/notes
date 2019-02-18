@@ -49,6 +49,16 @@
     ylab="l2"  #label for the y axis
     main="hi"  #title of plot
 
+##### Linear Regression
+    linear_model <- lm(data1 ~ data2)    # Runs the linear model of data1 against data2
+    summary(linear_model)                # Print a summary
+    plot(data1 ~ data2)                  # Plot it
+    abline(linear_model, lwd = 2)        # Generate a line and give it a width of 2
+    plot(linear_model$residuals ~ data2) # Plot residuals against x-variable. 
+    abline(a = 0, b = 0)                 # Add a y=0 line to help visualize residuals
+    
+Note: blah against stuff means stuff is the x and blah is the y. And R-formulas are "y ~ x"
+
 #### Create subsets from a data frame
     a1 <- a[, 1:3] #A new data frame with only the first three columns.
     a2 <- a[, c(1:3,8,10)] #A new data frame with columns 1,2,3,8,10
@@ -74,4 +84,17 @@
     numbers <- numbers*2 #multiply all elements in numbers vector by 2
 
 ## Comparators: >, >=, <=, ==, !=, &, |
-## Probability and Percentiles...to be continued
+## Probability, Sampling, Simulating
+
+### Sampling: (using seeds)
+    set.seed(1334)
+    sample(vec1, 3, replace = TRUE) # Sample 3 elements from the vector with replacement
+    library(mosaic) # for the 'do()' function
+    trials = do(5)*sample(vec1, 3, replace = FALSE) # Simulate sampling 3 elements from vec1 5 times
+    rowMeans(trials) # Takes the mean of each sample
+    rowSums(trials) # Takes the sum of each sample
+
+### Calculating normal and binomial distribution probabilities
+    dbinom(4, size = 7, prob = 0.5) # Coin flipping scenario. Probability of getting 4 heads when 7 coins are tossed
+    pbinom(4, size = 7, prob = 0.5) # Probability of getting 4 heads or less when 7 coins are tossed
+    pnorm(4,mean = 2, sd = .7)      # Probability of getting a number less than 4 from a normal distribution with mean 2, sd of 7
