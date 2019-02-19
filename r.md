@@ -28,7 +28,7 @@
 - Sample SD (sd), sample variance (var), variance-covariance matrix (cov), correlation matrix (cor) is similar to mean, but different keyword... `sd()`, `var()`, `cov()`, `cor()`.
 - Summary of each variable in data frame: `summary(a)`
 - Rename variables in a data frame: `names(a) <- c("a", "b")` #renames variable in first column to a, 2nd column var to b. 
-- Get Number Rows/Cols in an Array/Vector/DataFrame: `nrow(obj) ncol(obj)` # returns an integer or NULL
+- Get Number Rows/Cols in an Array/Vector/DataFrame: `nrow(obj) ncol(obj)` OR `dim(obj)` # dim returns rows and cols in a vector
 
 #### Plots
 
@@ -48,6 +48,9 @@
     xlab="l1"  #label for the x axis
     ylab="l2"  #label for the y axis
     main="hi"  #title of plot
+
+##### Density Curve Overlay on Histogram
+    lines(density(histData, adjust=2), col = "blue", lwd = 2) # Adjust makes it smoother.
 
 ##### Linear Regression
     linear_model <- lm(data1 ~ data2)    # Runs the linear model of data1 against data2
@@ -80,19 +83,25 @@ Note: blah against stuff means stuff is the x and blah is the y. And R-formulas 
     schools <- c("UCLA", "UC Berkeley", "USC")
     
     #operations
-    numbers[1] #gets first element of numbers, vectors are NOT indexed by 0, but 1.
-    numbers <- numbers*2 #multiply all elements in numbers vector by 2
+    numbers[1]           # Gets first element of numbers, vectors are NOT indexed by 0, but 1.
+    numbers <- numbers*2 # Multiply all elements in numbers vector by 2
+    length(numbers)      # Returns size of vector
 
 ## Comparators: >, >=, <=, ==, !=, &, |
 ## Probability, Sampling, Simulating
 
 ### Sampling: (using seeds)
     set.seed(1334)
-    sample(vec1, 3, replace = TRUE) # Sample 3 elements from the vector with replacement
-    library(mosaic) # for the 'do()' function
+    sample(vec1, 3, replace = TRUE)                 # Sample 3 elements from the vector with replacement
+    library(mosaic)                                 # for the 'do()' function
     trials = do(5)*sample(vec1, 3, replace = FALSE) # Simulate sampling 3 elements from vec1 5 times
-    rowMeans(trials) # Takes the mean of each sample
-    rowSums(trials) # Takes the sum of each sample
+    rowMeans(trials)                                # Takes the mean of each sample
+    rowSums(trials)                                 # Takes the sum of each sample
+
+#### Sample data frame by its rows
+    rowIndices <- sample(1992, size=5) # select 5 numbers from 1 to 1992 inclusive, puts it into a vector.
+    NCbirths[rowIndices,]              # Extract the rows in NCbirths that correspond to rowIndices. Include the comma!
+    
 
 ### Calculating normal and binomial distribution probabilities
     dbinom(4, size = 7, prob = 0.5) # Coin flipping scenario. Probability of getting 4 heads when 7 coins are tossed
