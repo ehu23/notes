@@ -106,4 +106,5 @@ Note: blah against stuff means stuff is the x and blah is the y. And R-formulas 
 ### Calculating normal and binomial distribution probabilities
     dbinom(4, size = 7, prob = 0.5) # Coin flipping scenario. Probability of getting 4 heads when 7 coins are tossed
     pbinom(4, size = 7, prob = 0.5) # Probability of getting 4 heads or less when 7 coins are tossed
-    pnorm(4,mean = 2, sd = .7)      # Probability of getting a number less than 4 from a normal distribution with mean 2, sd of 7
+    pnorm(4,mean = 2, sd = .7)      # Probability of getting a number <= 4 from a normal distribution with mean 2, sd of 7. If you set parameter "lower.tail = FALSE", you get prob. of the right tail, or 1-leftTail.
+    pt(-1.5, df = 29)               # Probability of getting a value <= -1.5 from a t-distribution with df=29. Also has a "lower.tail" parameter you can set.
