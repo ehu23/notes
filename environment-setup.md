@@ -4,7 +4,7 @@
     - Customize Mac settings
 2. Xcode:
     - Download/Install Xcode from App Store 
-    - Install xcode command line tools via `xcode-select --install`.
+    - Install xcode command line tools via `xcode-select --install`. (There is a bug with xcode 12 where you just need to get the .dmg from apple's website to get the tools and cannot install through command line)
         - Note: Make sure this is done after Xcode finishes! Check with `gcc` or `xcode-select -p`
 3. Git:
     - Set commit email address: `git config --global user.email "USERNAME@users.noreply.github.com"`
@@ -13,13 +13,13 @@
 4. Homebrew: 
     - Install homebrew: `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
     - Before brewing/casking: `brew update`. `brew doctor`.
-    - Cask: `brew tap caskroom/cask`. `brew search <package>`. `brew cask install <package>`.
+    - Cask: `brew tap homebrew/cask`. `brew search <package>`. `brew cask install <package>`.
         - Cask suggestions: google-chrome, spotify, webstorm, postman
     - Brew: `brew install <name>`
-        - Brew suggestions: tree, 
-5. Terminal: import custom terminal settings
+        - Brew suggestions: tree, wget
+5. Terminal: import custom terminal settings (should have it uploaded in dotfiles repo)
 6. Vim:
-    - Make directories: `mkdir -p ~/.vim/{pack/myPlugs/start, colors} 
+    - Make directories: `mkdir -p ~/.vim/{pack/myPlugs/start,colors}`
     - Copy over .vimrc, color schemes, plugins/packages.
 7. Dotfiles:
     - Copy these over, i.e. .bash_profile
